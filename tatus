@@ -1,0 +1,28 @@
+*   [33mcb26bfd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Merge branch 'feature__change-password-and-log-out'
+[31m|[m[32m\[m  
+[31m|[m * [33m308f224[m Add change password and log out
+[31m|[m[31m/[m  
+*   [33m92abc6f[m Merge branch 'feature__added-log-in'
+[33m|[m[34m\[m  
+[33m|[m * [33m38c8299[m Added feature log in
+[33m|[m[33m/[m  
+*   [33m24f72e4[m Merge branch 'feature__setup-filename-at-begining'
+[35m|[m[36m\[m  
+[35m|[m * [33mf86c7e1[m Added setup filename at begining
+[35m|[m[35m/[m  
+*   [33mbb934d4[m Merge branch 'feature__load-user-at-start'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m2686d65[m Added load user to vector on start program
+[1;31m|[m[1;31m/[m  
+*   [33m9f0fc82[m Merge branch 'refactor__user-register'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33med69267[m Divide KsiazkaAdresowa to smaller class
+[1;33m|[m[1;33m/[m  
+*   [33m50a342d[m Merge branch 'feature__user-register'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33mb4865a1[m Add registered user to file
+[1;35m|[m * [33m14b3845[m Add registered user to vector
+[1;35m|[m * [33m794fe86[m Created base class KsiazkaAdresowa and Uzytkownik
+[1;35m|[m[1;35m/[m  
+* [33ma81c18b[m Empty project
+* [33m9061c91[m Added .gitignore
