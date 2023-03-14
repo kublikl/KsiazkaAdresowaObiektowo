@@ -18,19 +18,23 @@ class PlikZAdresatami
     const string nazwaPlikuZAdresatami;
 
     int idOstatniegoAdresata;
+    int idZalogowanegoUzytkownika;
 
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-   // int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-   // int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
+
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-   // vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
-    //int pobierzIdOstatniegoAdresata();
-    vector <Adresat> wczytajAdresatowZPliku();
+    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci);
+    int pobierzIdOstatniegoAdresata();
+
+
 
 
 };
