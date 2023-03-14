@@ -8,7 +8,7 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
 
-    ksiazkaAdresowa.rejestracjaUzytkownika();
+   // ksiazkaAdresowa.rejestracjaUzytkownika();
   //  ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
   //  ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     ksiazkaAdresowa.logowanieUzytkownika();
