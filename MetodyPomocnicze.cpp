@@ -8,9 +8,9 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
     return str;
 }
 
-string MetodyPomocnicze::wczytajLinie(string wejscie)
+string MetodyPomocnicze::wczytajLinie()
 {
-   // string wejscie = "";
+    string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }

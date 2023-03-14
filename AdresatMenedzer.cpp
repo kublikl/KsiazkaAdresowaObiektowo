@@ -1,6 +1,7 @@
 #include "AdresatMenedzer.h"
 
-void AdresatMenedzer::dodajAdresata() {
+void AdresatMenedzer::dodajAdresata()
+{
     Adresat adresat;
 
     system("cls");
@@ -11,65 +12,73 @@ void AdresatMenedzer::dodajAdresata() {
         plikZAdresatami.dopiszAdresataDoPliku(adresat);
     } else
         cout << "Przed wprowadzeniem danych nowego adresata, zaloguj sie do panelu Uzytkownika" << endl;
+      //  system("pause");
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata() {
+Adresat AdresatMenedzer::podajDaneNowegoAdresata()
+{
     Adresat adresat;
 
-    adresat.ustawIdAdresata(pobierzIdOstatniegoAdresata());
+    adresat.ustawIdAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
-    string imie;
     cout << "Podaj imie: ";
-    cin >> imie;
-    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie));
+    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
 
-    string nazwisko;
     cout << "Podaj nazwisko: ";
-    cin >> nazwisko;
-    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko));
+    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
 
-    string numerTelefonu;
     cout << "Podaj numer telefonu: ";
-    cin >> numerTelefonu;
-    adresat.ustawNumerTelefonu(numerTelefonu);
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
 
-    string email;
     cout << "Podaj email: ";
-    cin >> email;
-    adresat.ustawEmail(email);
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
 
-    string adres;
     cout << "Podaj adres: ";
-    cin >> adres;
-    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie(adres));
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     return adresat;
 }
 
-int AdresatMenedzer::pobierzIdOstatniegoAdresata() {
-    if (adresaci.empty() == true)
-        return 1;
-    else
-        return adresaci.back().pobierzIdAdresata() + 1;
+
+
+void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    plikZAdresatami.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci);
 }
 
-void AdresatMenedzer::wczytajAdresatowZPliku() {
-    adresaci = plikZAdresatami.wczytajAdresatowZPliku();
-}
 
-void AdresatMenedzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika) {
+void AdresatMenedzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
+{
     idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
 }
 
-void AdresatMenedzer::wyswietlWszystkichAdresatow() {
-    for (unsigned int i = 0; i < adresaci.size(); i++) {
-        cout << adresaci[i].pobierzIdAdresata() << endl;
-        cout << adresaci[i].pobierzIdUzytkownika() << endl;
-        cout << adresaci[i].pobierzImie() << endl;
-        cout << adresaci[i].pobierzNazwisko() << endl;
-        cout << adresaci[i].pobierzNumerTelefonu() << endl;
-        cout << adresaci[i].pobierzEmail() << endl;
-        cout << adresaci[i].pobierzAdres() << endl;
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
+{
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        {
+            wyswietlDaneAdresata(*itr);
+        }
+        cout << endl;
     }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
+{
+    cout << endl << "Id:                 " << adresat.pobierzIdAdresata() << endl;
+    cout << "Imie:               " << adresat.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresat.pobierzEmail() << endl;
+    cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }

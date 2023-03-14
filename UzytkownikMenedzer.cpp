@@ -93,7 +93,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 
 void UzytkownikMenedzer::logowanieUzytkownika()
 {
-    // Uzytkownik uzytkownik;
+     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
@@ -155,6 +155,11 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 void UzytkownikMenedzer::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
+      cout << "Wylogowales sie" << endl;
 }
 
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
 
