@@ -20,8 +20,10 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
+    char wybierzOpcjeZMenuEdycja();
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 
 
@@ -34,6 +36,11 @@ public:
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
+    void edytujAdresata();
+    int podajIdWybranegoAdresata();
 
 };
 #endif
