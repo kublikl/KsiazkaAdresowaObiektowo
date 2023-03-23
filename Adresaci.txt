@@ -21,3 +21,5 @@
 21|3|Hhh|Hhh|X|X|X|
 22|3|D|D||||
 23|3|Gggg|Hhhh|Dfgdg|Dfg|D|
+24|3|Hhh|Sc|Sdc|Sd|Sdc|
+25|4|Edfs|Ggggggg|Fsd|F|Sdf|
